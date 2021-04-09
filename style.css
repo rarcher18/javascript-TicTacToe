@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --cell-overall: 100px;
+    --icon-size: calc(var(--cell-overall) *.9);
+}
+
 body {
     margin: 0;
 }
@@ -12,11 +17,22 @@ body {
     display: grid;
     justify-content: center;
     align-content: center;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    justify-items: center;
+
 
 }
 
 .cell {
-    width: 100px;
-    height: 100px;
-    background-color: black;
+    width: var(--cell-overall);
+    height: var(--cell-overall);
+    border: 1px solid white;
+    border: 1px solid black;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top: none;
 }
