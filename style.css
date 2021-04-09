@@ -45,6 +45,7 @@ body {
     border-left: none;
 }
 
+
 /* bottom border gone */
 .cell:last-child,
 .cell:nth-child(7),
