@@ -11,7 +11,7 @@ body {
     margin: 0;
 }
 
-.board{
+.board {
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -29,6 +29,9 @@ body {
     height: var(--cell-overall);
     border: 1px solid white;
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* top border gone */
@@ -41,7 +44,7 @@ body {
 /* left border gone */
 .cell:first-child,
 .cell:nth-child(4),
-.cell:nth-child(7){
+.cell:nth-child(7) {
     border-left: none;
 }
 
@@ -49,7 +52,7 @@ body {
 /* bottom border gone */
 .cell:last-child,
 .cell:nth-child(7),
-.cell:nth-child(8){
+.cell:nth-child(8) {
     border-bottom: none;
 }
 
@@ -58,6 +61,14 @@ body {
 .cell:nth-child(6),
 .cell:nth-child(9){
     border-right: none;
+}
+/* styling for X player */
+.cell.x::before,
+.cell.x::after {
+    content: '';
+    width: calc(var(--icon-size) * .10);
+    height: var(--icon-size);
+    background-color: black;
 }
 
 
