@@ -32,6 +32,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: grab;
 }
 
 /* top border gone */
@@ -40,7 +41,6 @@ body {
 .cell:nth-child(3){
     border-top: none;
 }
-
 
 /* left border gone */
 .cell:first-child,
@@ -81,6 +81,30 @@ body {
     transform: rotate(-45deg);
 }
 
+/* styling for O player */
+.cell.circle::before,
+.cell.circle::after {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+}
+
+.cell.circle::before {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    background-color: black;
+}
+
+.cell.circle::after {
+    width: calc(var(--icon-size)* .8);
+    height:calc(var(--icon-size)* .8);
+    background-color: white;
+}
+
+.cell.x,
+.cell.circle {
+    cursor: not-allowed;
+}
 
 
 
