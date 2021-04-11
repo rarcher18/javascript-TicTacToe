@@ -63,9 +63,15 @@ body {
 .cell:nth-child(9){
     border-right: none;
 }
+
+/* hovering for the x player */
+.board.x .cell:hover {}
+
 /* styling for X player */
 .cell.x::before,
-.cell.x::after {
+.cell.x::after,
+.board.x .cell:hover::before,
+.board.x .cell:hover::after {
     content: '';
     width: calc(var(--icon-size) * .10);
     height: var(--icon-size);
@@ -73,13 +79,16 @@ body {
     position: absolute;
 }
 
-.cell.x::before {
+.cell.x::before,
+.board.x .cell:hover::before {
     transform: rotate(45deg);
 }
 
-.cell.x::after {
+.cell.x::after,
+.board.x .cell:hover::after {
     transform: rotate(-45deg);
 }
+
 
 /* styling for O player */
 .cell.circle::before,
