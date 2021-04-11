@@ -69,6 +69,15 @@ body {
     width: calc(var(--icon-size) * .10);
     height: var(--icon-size);
     background-color: black;
+    position: absolute;
+}
+
+.cell.x::before {
+    transform: rotate(45deg);
+}
+
+.cell.x::after {
+    transform: rotate(-45deg);
 }
 
 
