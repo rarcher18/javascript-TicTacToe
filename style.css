@@ -64,8 +64,18 @@ body {
     border-right: none;
 }
 
-/* hovering for the x player */
-.board.x .cell:hover {}
+.cell.x::before,
+.cell.x::after,
+.cell.circle::before {
+    background-color: black;
+}
+
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+    background-color: rgb(197, 197, 197);
+     
+}
 
 /* styling for X player */
 .cell.x::before,
@@ -75,36 +85,38 @@ body {
     content: '';
     width: calc(var(--icon-size) * .10);
     height: var(--icon-size);
-    background-color: black;
     position: absolute;
 }
 
 .cell.x::before,
-.board.x .cell:hover::before {
+.board.x .cell:not(.x):not(.circle):hover::before {
     transform: rotate(45deg);
 }
 
 .cell.x::after,
-.board.x .cell:hover::after {
+.board.x .cell:not(.x):not(.circle):hover::after {
     transform: rotate(-45deg);
 }
 
 
 /* styling for O player */
 .cell.circle::before,
-.cell.circle::after {
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
     content: '';
     border-radius: 50%;
     position: absolute;
 }
 
-.cell.circle::before {
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before {
     width: var(--icon-size);
     height: var(--icon-size);
-    background-color: black;
 }
 
-.cell.circle::after {
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after {
     width: calc(var(--icon-size)* .8);
     height:calc(var(--icon-size)* .8);
     background-color: white;
