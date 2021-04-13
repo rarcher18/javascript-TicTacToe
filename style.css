@@ -70,8 +70,8 @@ body {
 /* styling for X player */
 .cell.x::before,
 .cell.x::after,
-.board.x .cell:hover::before,
-.board.x .cell:hover::after {
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
     content: '';
     width: calc(var(--icon-size) * .10);
     height: var(--icon-size);
