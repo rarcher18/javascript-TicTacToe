@@ -20,6 +20,7 @@ body {
     grid-template-columns: repeat(3, auto);
     justify-content: center;
     justify-items: center;
+    /* background-color: blue; */
 
 
 }
@@ -119,6 +120,7 @@ body {
 .board.circle .cell:not(.x):not(.circle):hover::after {
     width: calc(var(--icon-size)* .8);
     height:calc(var(--icon-size)* .8);
+    /* background-color:blue; */
     background-color: white;
 }
 
